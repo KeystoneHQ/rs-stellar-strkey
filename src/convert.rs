@@ -1,6 +1,8 @@
 // TODO: Could encode and decode, and the functions upstream that call them, be
 // const fn's?
 
+use alloc::{string::String, vec::Vec};
+
 use crate::{crc::checksum, error::DecodeError};
 
 pub fn encode(ver: u8, payload: &[u8]) -> String {

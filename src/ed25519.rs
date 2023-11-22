@@ -1,7 +1,10 @@
-use std::{
+use core::{
     fmt::{Debug, Display},
     str::FromStr,
 };
+
+use alloc::vec;
+use alloc::{format, string::String, vec::Vec};
 
 use crate::{
     convert::{decode, encode},
@@ -13,7 +16,7 @@ use crate::{
 pub struct PrivateKey(pub [u8; 32]);
 
 impl Debug for PrivateKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(f, "PrivateKey(")?;
         write!(
             f,
@@ -51,7 +54,7 @@ impl PrivateKey {
 }
 
 impl Display for PrivateKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(f, "{}", self.to_string())
     }
 }
@@ -68,7 +71,7 @@ impl FromStr for PrivateKey {
 pub struct PublicKey(pub [u8; 32]);
 
 impl Debug for PublicKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(f, "PublicKey(")?;
         write!(
             f,
@@ -106,7 +109,7 @@ impl PublicKey {
 }
 
 impl Display for PublicKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(f, "{}", self.to_string())
     }
 }
@@ -126,7 +129,7 @@ pub struct MuxedAccount {
 }
 
 impl Debug for MuxedAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(f, "MuxedAccount(")?;
         write!(
             f,
@@ -174,7 +177,7 @@ impl MuxedAccount {
 }
 
 impl Display for MuxedAccount {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(f, "{}", self.to_string())
     }
 }
@@ -197,7 +200,7 @@ pub struct SignedPayload {
 }
 
 impl Debug for SignedPayload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(f, "MuxedAccount(")?;
         write!(
             f,
@@ -287,7 +290,7 @@ impl SignedPayload {
 }
 
 impl Display for SignedPayload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(f, "{}", self.to_string())
     }
 }

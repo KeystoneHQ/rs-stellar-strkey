@@ -1,3 +1,7 @@
+#![no_std]
+
+extern crate alloc;
+
 #[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord, Hash)]
 pub struct Version<'a> {
     pub pkg: &'a str,
